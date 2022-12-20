@@ -4,9 +4,8 @@ use tcs::{
     instruments_service_client::InstrumentsServiceClient,
     market_data_service_client::MarketDataServiceClient,
     market_data_stream_service_client::MarketDataStreamServiceClient,
-    operations_service_client::OperationsServiceClient,
+    operations_service_client::OperationsServiceClient, orders_service_client::OrdersServiceClient,
     orders_stream_service_client::OrdersStreamServiceClient,
-    orders_service_client::OrdersServiceClient,
     sandbox_service_client::SandboxServiceClient,
     stop_orders_service_client::StopOrdersServiceClient, users_service_client::UsersServiceClient,
 };
