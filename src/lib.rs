@@ -9,11 +9,11 @@ use tcs::{
     sandbox_service_client::SandboxServiceClient,
     stop_orders_service_client::StopOrdersServiceClient, users_service_client::UsersServiceClient,
 };
-use tonic::{
-    codegen::InterceptedService,
+pub use tonic::{
+    codegen::{InterceptedService, CompressionEncoding},
     service::Interceptor,
     transport::{self, Channel, ClientTlsConfig},
-    Status,
+    Response, Status, Code
 };
 
 pub mod tcs;
