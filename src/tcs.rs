@@ -4035,6 +4035,26 @@ pub mod market_data_stream_service_client {
             );
             self.inner.server_streaming(request.into_request(), path, codec).await
         }
+        #[doc = "Server-side стрим предоставления биржевой информации."]
+        pub async fn market_data_server_side_stream(
+            &mut self,
+            request: impl tonic::IntoRequest<super::MarketDataServerSideStreamRequest>,
+        ) -> Result<
+            tonic::Response<tonic::codec::Streaming<super::MarketDataResponse>>,
+            tonic::Status,
+        > {
+            self.inner.ready().await.map_err(|e| {
+                tonic::Status::new(
+                    tonic::Code::Unknown,
+                    format!("Service was not ready: {}", e.into()),
+                )
+            })?;
+            let codec = tonic::codec::ProstCodec::default();
+            let path = http :: uri :: PathAndQuery :: from_static ("/tinkoff.public.invest.api.contract.v1.MarketDataStreamService/MarketDataServerSideStream") ;
+            self.inner
+                .server_streaming(request.into_request(), path, codec)
+                .await
+        }
     }
 }
 /// Запрос получения списка операций по счёту.
